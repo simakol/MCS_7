@@ -12,22 +12,28 @@
   ? Приведіть рядок до числа.
 */
 
-const firstNumber = "Enter first number";
-const secondNumber = "Enter first number";
-const sum = 0;
+// неявне перетворення за допомогою унарного плюса (не робіть так пліз)
+// const firstNumber = +prompt("Enter first number");
+// const secondNumber = +prompt("Enter first number");
+// const sum = firstNumber + secondNumber;
 
-console.log(`${firstNumber} + ${secondNumber} = ${sum}`);
+// явне перетворення за допомогою Number
+// const firstNumber = Number(prompt("Enter first number"));
+// const secondNumber = Number(prompt("Enter first number"));
+// const sum = firstNumber + secondNumber;
+
+// console.log(`${firstNumber} + ${secondNumber} = ${sum}`);
 
 //? Дізнайтесь числове значення ширини елемента.
 const elementWidth = "50px";
-const numericalWidth = elementWidth;
+const numericalWidth = Number.parseInt(elementWidth);
 
 console.log("elementWidth:", elementWidth);
 console.log("numericalWidth:", numericalWidth);
 
 //? Дізнайтесь числове значення висоти елемента.
 const elementHeight = "200.74px";
-const numericalHeight = elementHeight;
+const numericalHeight = Number.parseFloat(elementHeight);
 
 console.log("elementHeight: ", elementHeight);
 console.log("numericalHeight: ", numericalHeight);
@@ -38,4 +44,11 @@ console.log("numericalHeight: ", numericalHeight);
  ? та Math.round(). Перевір що буде в консолі при значеннях 27.3 та 27.9.
 */
 
-const value = 27.4;
+
+
+const value = 27.5;
+
+console.log(Math.ceil(value)); // округлення вгору
+console.log(Math.floor(value)); // округлення вниз
+
+console.log(Math.round(value)); // якщо дробова частина більша за 0.5 включно то округлення вгору, якщо менша - округлення вниз
