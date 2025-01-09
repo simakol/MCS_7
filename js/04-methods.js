@@ -14,6 +14,7 @@
 // const str = 'hello';
 
 // console.log(str.slice(2, 4));
+// console.log(str.slice(2));
 // console.log("Hello world".slice(6));
 // console.log("Hello world".slice(-5));
 // console.log("Hello world".slice(6, -2));
@@ -27,7 +28,7 @@
 
 // console.log("hello world".includes("world"));
 // console.log("hello world".includes("q"));
-// console.log("hello world".includes("r", 9));
+// console.log("hello world".includes("r", 8));
 
 //* startsWith/endsWith(value, position) - повертають тру якщо рядок починається або закінчується підрядком value. Якщо підрядок value не є початком або кінцем рядку - то повертається false;
 
@@ -45,6 +46,9 @@
 // const startIndex = str.indexOf('world');
 
 // console.log(startIndex);
+// console.log(str.indexOf('cat'));
+
+// console.log(~5); // -(N+1)
 
 // console.log(str.slice(startIndex, -1));
 
@@ -63,7 +67,19 @@
 ? 'Яка «офіційна» назва JavaScript?'
 ? Якщо користувач вводить ECMAScript,
 ? то показати: «Вірно!», інакше – відобразити: «Не знаєте? ECMAScript!»
+
+
+
 */
+
+// const correctAnswer = 'ECMAScript';
+// const userAnswer = prompt('Яка «офіційна» назва JavaScript?').trim().toLowerCase();
+
+// if (userAnswer === correctAnswer.toLowerCase()) {
+//   alert('Вірно!');
+// } else {
+//   alert('Не знаєте? ECMAScript!');
+// }
 
 /*
 ? Форматування посилання (endsWith)
@@ -75,6 +91,10 @@
 */
 
 // let link = 'https://my-site.com/about';
+
+// if (!link.endsWith('/')) {
+//   link += '/';
+// }
 
 // console.log(link);
 
@@ -88,5 +108,12 @@
 */
 
 // let link = 'https://somesite.com/about';
+let link = 'https://my-site.com/about';
 
-// console.log(link);
+// if (!link.endsWith('/') && link.includes("my-site")) {
+//   link += '/';
+// }
+
+link += !link.endsWith('/') && link.includes('my-site') ? '/' : '';
+
+console.log(link);

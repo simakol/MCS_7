@@ -19,21 +19,21 @@ if(умова) {
 }
 */
 
-// console.log("Before");
+// console.log("1 Before");
 
-// if(5 > 30){
-//   console.log("x > y");
+// if(5 < 30){
+//   console.log("2 x > y");
 // } else {
-//   console.log("x < y");
+//   console.log("3 x < y");
 // }
 
-// console.log("After");
+// console.log("4 After");
 
 /**
  * -----------------------------
  */
-/*
 
+/*
 ланцюжок повʼязаних перевірок, спочатку перевіряється умова 1, якщо вона істина, виконується тіло блоку іф 1, якщо умова хибна, джс переходить до виконання наступної умови, тобто, до наступного елсе іф і перевіряється умова 2. Ну і по аналогії, якщо вона істина - то виконується тіло блоку іф 2, якщо вона хибна, рухаємо нижче до наступних перевірок. Якщо всі умови були хибними - то виконується блок else.
 
 if(умова 1) {
@@ -51,14 +51,54 @@ else {
 
 */
 
+const a = 10;
+
+// if (a > 0) {
+//   console.log('Positive!');
+// } else if (a < 0) {
+//   console.log('Negative!');
+// } else {
+//   console.log('Equals zero');
+// }
+
+//! vs separate conditions
+
+// if (a > 0) {
+//   console.log('Positive!');
+// }
+
+// if (a < 0) {
+//   console.log('Negative!');
+// } else {
+//   console.log('Equals zero');
+// }
+
 /*
 ? Запросіть у користувача число, якщо число дорівнює 10,
 ? то виведіть 'Вірно', інакше виведіть 'Невірно'.
 */
 
+// const userNumber = Number(prompt("Enter your number:"))
+
+// if(userNumber === 10){
+//   console.log("Correct");
+// } else {
+//   console.log("Incorrect");
+// }
+
 /*
 ? Перевірте чи є гроші на балансі, якщо є то виведіть до консолі 'Positive', інакше 'Negative'.
 */
+
+// const balance = 0;
+
+// if (balance > 0) {
+//   console.log('Positive');
+// } else if (balance < 0) {
+//   console.log('Negative');
+// } else {
+//   console.log('Empty wallet');
+// }
 
 /*
 ? Напиши скрипт для відображення часу дедлайну здачі проекту. Використовуй if...else.
@@ -73,6 +113,18 @@ else {
 // const daysUntilDeadline = 7;
 // let message = '';
 
+// if (daysUntilDeadline === 0) {
+//   message = 'Today';
+// } else if (daysUntilDeadline === 1) {
+//   message = 'Tomorrow';
+// } else if (daysUntilDeadline === 2) {
+//   message = 'Overmorrow';
+// } else if (daysUntilDeadline >= 3) {
+//   message = 'Date in the future';
+// } else {
+//   message = 'Incorrect value of days';
+// }
+
 // console.log(message);
 
 // * Тернарний оператор
@@ -84,6 +136,9 @@ else {
 
 // const numA = 4;
 // const numB = 2;
+
+// let result = numA + numB < 4 ? 'Мало' : 'Багато';
+// let result = '';
 
 // if (numA + numB < 4) {
 //   result = 'Мало';
@@ -97,7 +152,7 @@ else {
 ?  Перепишіть if..else за допомогою декількох тернарних операторів.
 */
 
-// const login = 'Співробітник';
+// const login = '';
 
 // let message = '';
 
@@ -110,5 +165,30 @@ else {
 // } else {
 //   message = '';
 // }
+
+// приклад того як тернатрик розготується у вкладеність
+
+// if (login === 'Співробітник') {
+//   message = 'Привіт';
+// } else {
+//   if (login === 'Директор') {
+//     message = 'Вітаю';
+//   } else {
+//     if (login === '') {
+//       message = 'Немає логіну';
+//     } else {
+//       message = '';
+//     }
+//   }
+// }
+
+// message =
+//   login === 'Співробітник'
+//     ? 'Привіт'
+//     : login === 'Директор'
+//     ? 'Вітаю'
+//     : login === ''
+//     ? 'Немає логіну'
+//     : '';
 
 // console.log(message);

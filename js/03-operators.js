@@ -22,19 +22,33 @@
 
 */
 
-// console.log(true || false);
-// console.log(0 || "" || -3 || "hello");
-// console.log(0 || "" || null || false || undefined);
+// console.log(true || false); // true
+// console.log(0 || "" || -3 || "hello"); // -3
+// console.log(0 || "" || null || false || undefined); // undefined
 
-// console.log(true && false);
-// console.log(3.5 && " " && 0 && null && "");
-// console.log(3.5 && " " && "hello" && 7);
+// const firstName = prompt('Enter your name:') || 'anonymous';
+
+//1. 'Alex'(true) || 'anonymous'(true) -> 'Alex'
+//2. ''(false) || 'anonymous'(true) -> 'anonymous'
+//3. null(false) || 'anonymous'(true) -> 'anonymous'
+
+// console.log(firstName);
+
+// if (firstName !== '' && firstName !== null) {
+//   console.log(firstName);
+// } else {
+//   console.log('anonymous');
+// }
+
+// console.log(true && false); // false
+// console.log(3.5 && " " && 0 && null && ""); // 0
+// console.log(3.5 && " " && "hello" && 7); // 7
 
 // console.log(!true);
 // console.log(!false);
 
-// console.log(!0);
-// console.log(!" ");
+// console.log(!0); // !Boolean(0) -> !false -> true
+// console.log(!" "); // !Boolean(" ") -> !true -> false
 
 /*
  ? --------------------------------
@@ -42,58 +56,68 @@
 
 // console.log(Boolean(true));
 // console.log(Boolean(false));
-// console.log(Boolean(NaN));
-// console.log(Boolean(null));
-// console.log(Boolean(undefined));
-// console.log(Boolean(0));
-// console.log(Boolean(3.14));
-// console.log(Boolean(-10));
-// console.log(Boolean(''));
-// console.log(Boolean(' '));
-// console.log(Boolean('hello'));
-// console.log(Boolean('false'));
+// console.log(Boolean(NaN)); // false
+// console.log(Boolean(null)); // faslse
+// console.log(Boolean(undefined)); // false
+// console.log(Boolean(0)); // false
+// console.log(Boolean(3.14)); // true
+// console.log(Boolean(-10)); // true
+// console.log(Boolean('')); // false
+// console.log(Boolean(' ')); // true
+// console.log(Boolean('hello')); // true
+// console.log(Boolean('false')); // true
 
 /*
  ? --------------------------------
  */
 
-// console.log(5 && 4);
-// console.log(5 && 'mango');
-// console.log(0 && 'mango');
+// console.log(5 && 4); // 4
+// console.log(5 && 'mango'); 'mango'
+// console.log(0 && 'mango'); // 0
 
 /*
  ? --------------------------------
  */
 
-// console.log(null || 5);
-// console.log(0 || null);
-// console.log(5 || null);
+// console.log(null || 5); // 5
+// console.log(0 || null); // null
+// console.log(5 || null); // 5
 
 /*
  ? --------------------------------
  */
 
-// console.log(!5);
-// console.log(!false);
+// console.log(!5); // false
+// console.log(!false); // true
 
 /*
  ? --------------------------------
  */
 
-// console.log(true && 3);
+// console.log(true && 3); // 3
 
-// console.log(false && 3);
+// console.log(false && 3); // false
 
-// console.log(true && 4 && 'kiwi');
+// console.log(true && 4 && 'kiwi'); // 'kiwi'
 
-// console.log(true && 0 && 'kiwi');
+// console.log(true && 0 && 'kiwi'); // 0
 
-// console.log(true || 3);
+// console.log(true || 3); // true
 
-// console.log(true || 3 || 4);
+// console.log(true || 3 || 4); // true
 
-// console.log(true || false || 7);
+// console.log(true || false || 7); // true
 
-// console.log(null || 2 || undefined);
+// console.log(null || 2 || undefined); // 2
 
-// console.log(null || 2 && 3 || 4);
+// console.log(null || 2 && 3 || 4); // 3
+
+// 1. 2 && 3 -> 3
+// 2. null || 3 || 4 -> 3
+
+//* ?? - оператор нульового злиття - поверне перше значення яке не є null або undefined(якщо таких немає - поверне останнє)
+
+// console.log(false || 0 || null);
+// console.log(false ?? 0 ?? null);
+
+// console.log(null ?? undefined ?? '' ?? 5);

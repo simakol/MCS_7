@@ -7,11 +7,24 @@
 ? [45 до 60) - четверта чверть години
 */
 
-// const minutes = 55;
+const minutes = 57;
 
 //* v1
+// const quarter = Math.floor(minutes / 15) + 1;
+
+// console.log(quarter);
 
 //* v2
+
+// if (minutes >= 0 && minutes < 15) {
+//   console.log('quarter 1');
+// } else if (minutes < 30) {
+//   console.log('quarter 2');
+// } else if (minutes < 45) {
+//   console.log('quarter 3');
+// } else if (minutes < 60) {
+//   console.log('quarter 4');
+// }
 
 /*
 ?  Перепишіть код за допомогою однієї конструкції switch:
@@ -29,6 +42,25 @@
 //   console.log('Ви ввели якесь інше число');
 // }
 
+// switch (number) {
+//   case 0: {
+//     console.log('Ви ввели число 0');
+//     break;
+//   }
+//   case 1: {
+//     console.log('Ви ввели число 1');
+//     break;
+//   }
+//   case 2:
+//   case 3: {
+//     console.log('Ви ввели число 2, а може й 3');
+//     break;
+//   }
+//   default: {
+//     console.log('Ви ввели якесь інше число');
+//   }
+// }
+
 /*
 ? Напиши скрипт, який перевіряє можливість відкрити чат з користувачем.
 ? Для цього, користувач має бути:
@@ -41,7 +73,7 @@
 // const isFriend = true;
 // const isDnd = false;
 
-// let canOpenChat = ;
+// let canOpenChat = isOnline && isFriend && !isDnd;
 
 // console.log('Чи можна відкрити чат? ', canOpenChat);
 
@@ -51,3 +83,26 @@
 ? а для чисел, що діляться на 5 – 'Buzz'.
 ? Для чисел які кратні 3 та 5 = 'FizzBuzz'
 */
+
+for (let i = 1; i <= 100; i += 1) {
+  //   if (i % 3 === 0 && i % 5 === 0) {
+  //     console.log('FizzBuzz');
+  //   } else if (i % 3 === 0) {
+  //     console.log('Fizz');
+  //   } else if (i % 5 === 0) {
+  //     console.log('Buzz');
+  //   } else {
+  //     console.log(i);
+  //   }
+
+  let res = '';
+  if (i % 3 === 0) {
+    res += 'Fizz';
+  }
+  
+  if (i % 5 === 0) {
+    res += 'Buzz';
+  }
+
+  console.log(res || i);
+}

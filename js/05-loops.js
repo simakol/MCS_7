@@ -23,8 +23,18 @@ for(ініціалізація змінних (зазвичай ітератор
 
 */
 
+// console.log('before');
+
 // for (let i = 1; i <= 4; i += 1) {
 //   console.log(`Логування повідомлення. Ітерація #${i}`);
+// }
+
+// console.log('after');
+
+// const str = 'hello'
+
+// for(let i = 0; i < str.length; i += 1){
+//     console.log(`Index: ${i} | Char: ${str[i]}`);
 // }
 
 /*
@@ -45,6 +55,16 @@ while(умова) {
 ? Виведіть числа від 1 до 50 використовуючи цикл while
 */
 
+// for (let i = 1; i <= 50; i += 1) {
+//   console.log(i);
+// }
+
+// let i = 1;
+
+// while (i <= 50) {
+//   console.log(i);
+//   i += 1;
+// }
 
 /*
 ? Напишіть цикл, який пропонує prompt ввести число більше за 100.
@@ -52,23 +72,58 @@ while(умова) {
 */
 // do while - спочатку робить - потім перевіряє. як мінімум 1 ітерація буде завжди
 
+// let userNumber = 0;
+
+// do {
+//    userNumber = Number(prompt('Enter number bigger than 100'));
+// } while (userNumber < 100);
+
 /*
 ? За допомогою циклу for виведіть парні числа від 2 до 10.
 */
 
 //* v1
-
+// for (let i = 2; i <= 10; i += 2) {
+//   console.log(i);
+// }
 
 //* v2
+// for (let i = 2; i <= 10; i += 1) {
+//   if (i % 2 === 0) {
+//     console.log(i);
+//   }
+// }
 
 /*
 ? Напиши цикл for, який виводить у консоль браузера
 ? числа за зростанням від a до b, але тільки якщо число кратне 5.
 */
 
-// const a = 3;
-// const b = 116;
+const a = 3;
+const b = 116;
 
+let iterationCounter = 0;
+
+//* v1
+// for (let i = a; i <= b; i += 1) {
+//   if (i % 5 === 0) {
+//     console.log(i);
+//   }
+//   iterationCounter += 1;
+// }
+
+//* v2
+// let start = Math.ceil(a / 5) * 5;
+
+// // console.log(start);
+
+// for (let i = start; i <= b; i += 5) {
+//   console.log(i);
+
+//   iterationCounter += 1;
+// }
+
+console.log('iterationCounter', iterationCounter);
 
 //! інкремент
 
