@@ -9,7 +9,7 @@
  * - push/pop
  */
 
-const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
 
 //* .join(separator) - викликається на масиві та приймає один параметр (знак розділювача). Цей метод повертає рядок у якому всі елементи масиву будуть розділені нашим параметром separator. з масиву в рядок
 
@@ -32,7 +32,7 @@ const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 // console.log(arr);
 // console.log(arrCopy);
 
-// const fruitsArr = ['banana', 'apple', 'mango', 'lemon'];
+// const fruitsArr = ['1banana', '2apple', '3mango', '4lemon'];
 
 // const someFruits = fruitsArr.slice(1, 3);
 // const someFruits = fruitsArr.slice(1); // коли не передається енд, копія відбувається до кінця масиву
@@ -49,10 +49,10 @@ const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 
 //* indexOf(value) - повертає індекс першого входження яке буде рівним значенню value, якщо такого елементу не знайшлось - повертається -1
 
-// const fruitsArr = ['banana', 'apple', 'mango', 'lemon'];
+// const fruitsArr = ["banana", "apple", "mango", "lemon"];
 
-// console.log('apple:', fruitsArr.indexOf('apple')); // 1
-// console.log('melon:', fruitsArr.indexOf('melon')); // -1
+// console.log("apple:", fruitsArr.indexOf("apple")); // 1
+// console.log("melon:", fruitsArr.indexOf("melon")); // -1
 
 //* .push(value) - додає значення value у кінець масиву
 
@@ -69,5 +69,5 @@ console.log(fruitsArr);
 
 //* .includes(value) - повертає true якщо значення value зустрічається у масиві і повертає false, якщо значення value у масиві немає
 
-console.log(fruitsArr.includes('apple'));
-console.log(fruitsArr.includes('orange'));
+console.log(fruitsArr.includes('apple')); // true
+console.log(fruitsArr.includes('orange')); // false

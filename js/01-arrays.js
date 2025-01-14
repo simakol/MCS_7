@@ -20,22 +20,24 @@ console.log(courses);
 
 // щоб отримати доступ до певної комірки в масиві - ми будемо звертатись до неї за індексом arr[index]
 
-console.log('0:', courses[0]);
-console.log('1:', courses[1]);
-console.log('2:', courses[2]);
-console.log('3:', courses[3]);
-console.log('4:', courses[4]);
-console.log('5:', courses[5]);
+// console.log('0:', courses[0]);
+// console.log('1:', courses[1]);
+// console.log('2:', courses[2]);
+// console.log('3:', courses[3]);
+// console.log('4:', courses[4]);
+// console.log('5:', courses[5]);
 
-courses[0] = 'XML';
+// courses[0] = 'XML';
+// courses[10] = 'Nest.js';
 
-console.log(courses);
+// console.log(courses);
+// console.log(courses[7]);
 
 // можу отримати довжину масиву (кількість елементів в ньому) за допомогою властивості .length
 
-console.log(courses.length);
+// console.log(courses.length);
 
 // якщо нам потрібно отримати індекс останнього елементу масиву ми будемо віднімати 1 від довжини масиву (тому що розрахунок починається з 0)
 
-const lastIndex = courses.length - 1;
-console.log(lastIndex, courses[lastIndex]);
+// const lastIndex = courses.length - 1;
+// console.log(lastIndex, courses[lastIndex]);
