@@ -5,14 +5,14 @@
  * - Обчислювальні властивості
  */
 
-const username = 'Mango';
-const email = 'mango@mail.com';
+const username = "Mango";
+const email = "mango@mail.com";
 
 const credentials = {
   // username: username,
   // email: email,
-  username,
   email,
+  username
 };
 
 // console.log(credentials);
@@ -23,8 +23,8 @@ const credentials = {
   <input type="text" name="color">
 */
 
-const inputName = 'color';
-const inputValue = 'rgb(255, 0, 255)';
+const inputName = "color";
+const inputValue = "rgb(255, 0, 255)";
 
 const colorPickerData = {
   [inputName]: inputValue, // color: 'rgb(255, 0, 255)'

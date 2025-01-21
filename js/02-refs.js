@@ -6,16 +6,17 @@
  */
 
 const user = {
-  firstName: 'John',
-  lastName: 'Dou',
+  firstName: "John",
+  lastName: "Dou",
 };
 
 const userCopy = user;
+// const userCopy = { ...user };
 
-console.log('user:', user);
-console.log('userCopy:', userCopy);
+console.log("user:", user);
+console.log("userCopy:", userCopy);
 
 userCopy.age = 20;
 
-console.log('user:', user);
-console.log('userCopy:', userCopy);
+console.log("user:", user);
+console.log("userCopy:", userCopy);
