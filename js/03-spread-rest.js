@@ -18,13 +18,24 @@
 // console.log(...numbers);
 // param = arg
 
+// function sum(a, b) {
+//   // let a = 1
+//   // let b = 5
+//   return a + b;
+// }
+
+// const numsArr = [1, 5];
+
+// console.log(sum(1, 5));
+// console.log(sum(...numsArr)); // spread
+
 /*
 ? Пошук найменшої або найбільшої температури (числа)
 */
 // const temps = [18, 14, 12, 21, 17, 29, 24];
 
-// const minTemp =
-// const maxTemp = 
+// const minTemp = Math.min(...temps)
+// const maxTemp = Math.max(...temps)
 
 // console.log('temps: ', temps);
 // console.log('minTemp: ', minTemp);
@@ -33,8 +44,9 @@
 /*
 ? Створення копії масиву примітивів
 */
+
 // const values = [23, 34, 4, 5];
-// const valuesCopy = 
+// const valuesCopy = [...values]
 
 // valuesCopy.push(10);
 
@@ -45,48 +57,53 @@
 ? Створення копії масиву із складними типами даних
 */
 
-// const users = [
-//   { firstName: 'Lucy' },
-//   { firstName: 'Ollie' },
-//   { firstName: 'Lily' },
-// ];
+const users = [
+  { firstName: "Lucy" },
+  { firstName: "Ollie" },
+  { firstName: "Lily" },
+];
 
-// const usersCopy = 
+// const usersCopy = [...users]; //! це не є коректна копія, так як була зроблена копія масиву, але обʼєкти всередині залишились такими самими
+// const usersCopy = JSON.parse(JSON.stringify(users)); //! цей варіант працює тільки для тих вкладених обʼєктів у яких немає методів всередині, тому що в результаті цих викликів ви втратите методи
+const usersCopy = _.cloneDeep(users);
 
-// usersCopy[0].firstName = 'Andre';
+usersCopy[0].firstName = "Andre";
 
-// console.log('users:', users);
-// console.log('usersCopy:', usersCopy);
+// console.log("users:", users);
+// console.log("usersCopy:", usersCopy);
 
 /*
 ? Поєднуємо декілько масивів в один через spread
 */
 
-// const lastWeekTemps = [1, 2, 3];
-// const currentTemps = [4, 5, 6];
-// const nextWeekTemps = [7, 8, 9];
+const lastWeekTemps = [1, 2, 3];
+const currentTemps = [4, 5, 6];
+const nextWeekTemps = [7, 8, 9];
 
-// const allTemps = ;
+// const allTemps = lastWeekTemps.concat(currentTemps, nextWeekTemps);
+const allTemps = [...lastWeekTemps, 100, ...currentTemps, ...nextWeekTemps];
 
 // console.log(allTemps);
 
 /*
 ? Створення копії об'єкта
 */
-// const obj = { x: 1, y: 2 };
-// const objCopy = ;
+const obj = { x: 1, y: 2 };
+// const objCopy = { ...obj };
+const objCopy = { ...obj };
+// const objCopy = Object.assign({}, obj);
 
-// objCopy.x = 10;
+objCopy.x = 10;
 
-// console.log('obj: ', obj);
-// console.log('objCopy: ', objCopy);
+// console.log("obj: ", obj);
+// console.log("objCopy: ", objCopy);
 
 /*
 ? Поєднуємо декілько обʼєктів в один через spread
 */
-// const objA = { x: 1, y: 2 };
-// const objB = { x: 0, z: 3 };
-// const objC = 
+const objA = { x: 1, y: 2 };
+const objB = { x: 0, z: 3 };
+const objC = { ...objA, ...objB };
 
 // console.log('objA: ', objA);
 // console.log('objB: ', objB);
@@ -95,31 +112,40 @@
 /*
 ? Оновлюємо налаштування користувача
 */
-// const defaultSettings = {
-//   theme: 'light',
-//   showNotifications: true,
-//   hideSidebar: false,
-// };
+const defaultSettings = {
+  theme: "light",
+  showNotifications: true,
+  hideSidebar: false,
+};
 
-// const userSettings = {
-//   theme: 'dark',
-//   showNotifications: false,
-// };
+const userSettings = {
+  theme: "dark",
+  showNotifications: false,
+};
 
-// const finalSettings = {
- 
-// };
+const finalSettings = {
+  ...defaultSettings,
+  ...userSettings,
+};
 
-// console.log('defaultSettings:', defaultSettings);
-// console.log('userSettings:', userSettings);
-// console.log('finalSettings:', finalSettings);
+// console.log("defaultSettings:", defaultSettings);
+// console.log("userSettings:", userSettings);
+// console.log("finalSettings:", finalSettings);
 
 //? Напишіть функцію sum, яка складає довільну кількість аргументів
-// function sum() {
- 
-// }
+function sum(...args) {
+  let sum = 0;
+  for (const num of args) {
+    sum += num;
+  }
 
+  return sum;
+}
 
-// console.log(sum(1, 2, 3, 4, 5));
-// console.log(sum(10, 40, 60));
-// console.log(sum(10, 40, 60, 100, 200, 300, 4000, 5));
+console.log(sum(1, 2, 3, 4, 5));
+console.log(sum(10, 40, 60));
+console.log(sum(10, 40, 60, 100, 200, 300, 4000, 5));
+
+// аргументи - права сторона від дорівнює
+// параметри - ліва сторона від дорівнює
+// параметр = аргументу
