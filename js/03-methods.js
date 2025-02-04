@@ -9,9 +9,9 @@
 /*
 всі ці методи потрібні для привʼязки нового контексту до вашої функції
 
-* call - викликає фукнцію на місці з новим контекстом (аргумети передаються через кому)
+* call - викликає фукнцію на місці з новим контекстом (аргументи передаються через кому)
 
-* apply - викликає фукнцію на місці з новим контекстом (аргумети передаються у вигляді масиву)
+* apply - викликає фукнцію на місці з новим контекстом (аргументи передаються у вигляді масиву)
 
 * bind - повертає копію фукнції з новим контекстом, щоб можна було викликати її пізніше (наприклад, коли йде передача колбек фукнції). (аргумети передаються через кому)
 */
@@ -29,22 +29,22 @@
 
 //? Викличте функцію showFullName у контексті об'єкта user
 
-const showFullName = function (message, a, b, c) {
-  console.log(`${message} ${this.firstName} ${this.lastName}`);
-  console.log(a, b, c);
-};
+// const showFullName = function (message, a, b, c) {
+//   console.log(`${message} ${this.firstName} ${this.lastName}`);
+//   console.log(a, b, c);
+// };
 
 // const user = {
-//   firstName: 'Ernest',
-//   lastName: 'Vasquez',
+//   firstName: "Ernest",
+//   lastName: "Vasquez",
 //   age: 30,
 // };
 
-// першим аргументом передається обʼєкт який повинен стати this'ом всередині фукнції яка викликається, тобто ви вручну задаєте контекст виклику.
-// showFullName.call(user, 'Hello', 1, 2, 3);
-// showFullName.apply(user, ['Hello', 1, 2, 3]);
+// // першим аргументом передається обʼєкт який повинен стати this'ом всередині фукнції яка викликається, тобто ви вручну задаєте контекст виклику.
+// showFullName.call(user, "Hello", 1, 2, 3);
+// showFullName.apply(user, ["Hello", 1, 2, 3]);
 
-//? Викличте функцію showFullName у контексті об'єкта anotherUser
+// //? Викличте функцію showFullName у контексті об'єкта anotherUser
 
 // const anotherUser = {
 //   firstName: 'Marvin',
@@ -106,22 +106,23 @@ const showFullName = function (message, a, b, c) {
 
 //? Передайте метод обʼєкта в якості callback функції
 
-// const user = {
-//   name: 'Luis',
-//   age: 30,
+const user = {
+  name: "Luis",
+  age: 30,
 
-//   showThis() {
-//     console.log('This --->', this);
-//   },
+  showThis() {
+    console.log("This --->", this);
+  },
 
-//   showName() {
-//     console.log(this.name);
-//   },
-// };
+  showName() {
+    console.log(this.name);
+  },
+};
 
-// const someFunction = callback => {
-//   callback();
-// };
+const someFunction = (callback) => {
+  callback();
+};
 
-// someFunction(user.showName.bind(user)); 
+someFunction(user.showName.bind(user));
+// someFunction(user.showName);
 // в якості колбеку ви вже будете передавати копію методу showName у якому this буде привʼязано до обʼєкту user

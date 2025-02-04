@@ -18,9 +18,15 @@ const animal = {
 
 const dog = Object.create(animal);
 
+// console.log(dog);
+// console.log(dog.head);
+
 // власні властивості собаки
 dog.name = "Persik";
-dog.bark = () => console.log("Bark!");
+dog.bark = function () {
+  console.log(this);
+  console.log("Bark!");
+};
 
 console.log(dog);
 console.log(dog.tail); // не власна властивість (тому що вона була унаслідувана від обʼєкту прототипа, а саме обʼєкту animal)
@@ -46,6 +52,7 @@ dog.bark();
 dog.bark();
 dog.bark();
 
+console.log(dog);
 // оператор in не розрізняє чи є властивість власною, чи вона взята з прототипу
 console.log("name" in dog); // true
 console.log("voice" in dog); // false
@@ -70,7 +77,6 @@ const arr = [1, 2, 3];
 const newArr = arr.map((el) => el * 2);
 
 console.log(newArr);
-console.log(newArr.hasOwnProperty("length"));
 
 // console.clear();
 
