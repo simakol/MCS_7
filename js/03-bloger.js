@@ -11,7 +11,22 @@
 ? - Додай метод updatePostCount(value), який у параметрі value приймає кількість постів, які потрібно додати користувачеві.
  */
 
+class Blogger {
+  constructor(email, age, numberOfPosts, topics) {
+    this.email = email;
+    this.age = age;
+    this.numberOfPosts = numberOfPosts;
+    this.topics = topics;
+  }
 
+  getInfo() {
+    return `Blogger ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts.`;
+  }
+
+  updatePostCount(value) {
+    this.numberOfPosts += value;
+  }
+}
 
 const mango = new Blogger("mango@mail.com", 24, 20, ["tech", "cooking"]);
 

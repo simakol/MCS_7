@@ -4,6 +4,32 @@
 ? гетер та сетер login та email.
  */
 
+class User {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
+  }
+
+  get login() {
+    return this.#login;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  set login(newValue) {
+    this.#login = newValue;
+  }
+
+  set email(newValue) {
+    this.#email = newValue;
+  }
+}
+
 const mango = new User("Mango", "mango@dog.woof");
 
 console.log(mango);
