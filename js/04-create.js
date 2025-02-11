@@ -39,8 +39,25 @@ console.log(imageEl);
 linkEl.append(imageEl)
 liEl.append(linkEl)
 
+// console.log(linkEl);
+
 console.log(liEl);
 
 const galleryEl = document.querySelector('.js-gallery');
 
 galleryEl.append(liEl)
+
+/*
+
+<li>...</li>
+<li>...</li>
+<li>...</li>
+<li id="my-li">...</li>
+<li>...</li>
+<li>...</li>
+
+https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore
+https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild
+https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
+https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend
+*/

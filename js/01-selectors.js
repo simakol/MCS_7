@@ -5,6 +5,8 @@
  * - За ID
  */
 
+// console.dir(document.body.childNodes);
+
 // const magicButtonEl = document.querySelector('#magic-btn');
 
 // console.dir(magicButtonEl);
