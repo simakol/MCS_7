@@ -66,3 +66,116 @@ const refs = {
   list: document.querySelector(".js-list"),
   notFoundText: document.querySelector(".js-not-found"),
 };
+
+refs.form.addEventListener("submit", handleSearch);
+
+const createGalleryMarkup = (cars) =>
+  cars
+    .map(
+      (car) => `<li class="car-list-item" data-id="${car.id}">
+    <img class="car-list-img" src="${car.img}" alt="${car.model}" />
+    <div class="car-list-text-content">
+      <h3 class="car-list-title">${car.car}</h3>
+      <p class="car-list-price">$${car.price}</p>
+    </div>
+  </li>`
+    )
+    .join("");
+
+refs.list.innerHTML = createGalleryMarkup(allCars);
+
+function handleSearch(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formElements = form.elements;
+
+  const formData = {
+    query: formElements.query.value.trim().toLowerCase(),
+    options: formElements.options.value,
+  };
+
+  console.log(formData);
+
+  const filteredCars = allCars.filter((car) =>
+    car[formData.options].toLowerCase().includes(formData.query)
+  );
+
+  console.log(filteredCars);
+
+  if (filteredCars.length === 0) {
+    refs.list.innerHTML = "";
+    refs.notFoundText.classList.remove("hidden");
+    refs.notFoundText.querySelector("span").textContent = formData.query;
+    return;
+  }
+
+  refs.notFoundText.classList.add("hidden");
+  refs.list.innerHTML = createGalleryMarkup(filteredCars);
+}
+
+/*
+formData.query = "audi"
+formData.options = "car"
+
+* car => car[formData.options].toLowerCase().includes(formData.query)
+
+! 1. car = {
+    id: 1,
+    car: 'Audi',
+    model: 'A6',
+    price: 30000,
+    img: 'https://static.wixstatic.com/media/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg/v1/fill/w_520,h_338,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg',
+  }
+
+  car["car"].toLowerCase().includes("audi") ->
+  'Audi'.toLowerCase().includes("audi") ->
+  'audi'.includes("audi") -> true
+
+  !2. car = {
+    id: 2,
+    car: 'Honda',
+    model: 'Civic',
+    price: 12000,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+  }
+
+   car["car"].toLowerCase().includes("audi") ->
+   'Honda'.toLowerCase().includes("audi") -> 
+   'honda'.includes("audi") -> false
+
+
+   ! =========
+
+   formData.query = "civic"
+   formData.options = "model"
+
+    * car => car[formData.options].toLowerCase().includes(formData.query)
+
+    ! 1. car = {
+        id: 1,
+        car: 'Audi',
+        model: 'A6',
+        price: 30000,
+        img: 'https://static.wixstatic.com/media/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg/v1/fill/w_520,h_338,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg',
+      }
+
+      car["model"].toLowerCase().includes("civic") ->
+      'A6'.toLowerCase().includes("civic") ->
+      'a6'.includes("civic") -> false
+      
+    ! 2. car =  {
+    id: 2,
+    car: 'Honda',
+    model: 'Civic',
+    price: 12000,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+  }
+
+      car["model"].toLowerCase().includes("civic") ->
+      'Civic'.toLowerCase().includes("civic") ->
+      'civic'.includes("civic") -> true
+
+
+
+*/

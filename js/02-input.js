@@ -12,11 +12,44 @@ const checkboxPolicyEl = document.querySelector(".js-policy-checkbox");
 
 */
 
+// inputEl.addEventListener("input", handleInput);
+
+// function handleInput(event) {
+//   //   console.log(event);
+
+//   //* v1
+//   console.log(inputEl.value);
+
+//   //* v2
+//   console.log(event.target.value);
+// }
+
 /*
 ? Користувач вводить в input своє ім'я після втрати
 ? фокусу отримує alert з повідомленням-привітанням
  */
 
+// inputEl.addEventListener("blur", handleBlur);
+
+// function handleBlur(event) {
+//     alert(`Hello, ${event.target.value.trim()}`)
+// }
+
 /*
 ? Після того, як користувач активує чекбокс, виводиться alert
 */
+
+inputEl.addEventListener("change", handleChange);
+checkboxPolicyEl.addEventListener("change", handleCheckboxChange);
+
+function handleChange(event) {
+  alert(`Hello, ${event.target.value.trim()}`);
+}
+
+function handleCheckboxChange(event) {
+  console.log(event.target.checked);
+
+  if (event.target.checked) {
+    console.log("Done!");
+  }
+}
