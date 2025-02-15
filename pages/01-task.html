@@ -21,16 +21,19 @@
         height: 50px;
         border-radius: 50%;
         background-color: #000;
+        border: 1px solid black;
       }
     </style>
   </head>
   <body>
     <form id="mainForm">
-      <input type="text" placeholder="amount" name="amount" />
+      <input type="number" placeholder="amount" name="amount" />
       <button type="submit">Generate</button>
     </form>
 
     <div class="container js-container"></div>
+
+    <button id="button">click</button>
 
     <script type="module" src="../js/01-task.js"></script>
   </body>
